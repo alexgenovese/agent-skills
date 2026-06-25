@@ -9,7 +9,7 @@ Produce estimates that survive contact with reality.
 
 ## The Problem with Estimates
 
-Humans are systematically optimistic. We estimate as if everything goes right — but in practice, integration, debugging, review, and context-switching consume 40-60% of the total time. This skill exists because your first instinct ("that'll take 2 days") is wrong.
+Humans are systematically optimistic. We estimate as if everything goes right — but in practice, integration, debugging, review, and context-switching consume 40-60% of the total time. This skill exists because your first instinct ("that will take 2 days") is wrong.
 
 ## Anchoring
 
@@ -25,7 +25,7 @@ Never give a single number. Always communicate the range. If asked for a single 
 
 ## Estimation by Analogy
 
-The most reliable technique. Find something similar you've already done and use its actual duration as a baseline, adjusted for differences:
+The most reliable technique. Find something similar you have already done and use its actual duration as a baseline, adjusted for differences:
 
 - New tech stack? Multiply by 1.3–1.8
 - Same team has done it before? Multiply by 0.7–0.9
@@ -61,8 +61,8 @@ Recalibrate at each phase. An estimate from the concept phase is not a commitmen
 
 - Always include assumptions and exclusions ("Assumes API keys are provisioned", "Does not include E2E tests")
 - State the confidence level, not just the number
-- Re-estimate when assumptions change — the mid-sprint "update" is not a failure, it's a signal
+- Re-estimate when assumptions change — the mid-sprint "update" is not a failure, it is a signal
 
-## References
+## Resources
 
-See `references/calibration-log.md` for tracking how your past estimates compare to actuals — the only way to get better at this.
+See `resources/calibration-log.md` for tracking how your past estimates compare to actuals — the only way to get better at this.

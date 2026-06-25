@@ -1,34 +1,37 @@
 # OpenCode Agent Config
 
-Raccolta di skill e agenti per OpenCode e altri agenti compatibili. Le skill sono organizzate per ambiti di competenza sotto `skills/`.
+Questo repository contiene un agente software engineer con skill organizzate per ambiti di competenza.
 
 ## Struttura
 
 ```
-skills/
-  prodotto/        # Competenze di prodotto
-  foundation/
-    plan/          # Pianificazione e architettura
-    coding/        # Implementazione e qualità
-agents/            # Definizioni agente .md
+software-engineer/           ← agente (directory principale)
+  SKILL.md                   ← metadati agente + system prompt
+  skills/
+    <area>/<skill-name>/     ← skill organizzate per area
+      SKILL.md               ← metadati skill + istruzioni
+      resources/             ← documentazione caricabile su richiesta
+      assets/                ← template, icone, font
+      functions/             ← script eseguibili (deterministici)
 ```
 
 ## Scrivere Skill
 
-- Ogni skill è una directory sotto `skills/` con `SKILL.md` YAML frontmatter (`name`, `description`)
-- SKILL.md sotto 500 righe; usa `references/` per documentazione approfondita
+- Ogni skill vive sotto `skills/<area>/<nome>/SKILL.md`
+- Frontmatter richiede: `name`, `description`
+- SKILL.md sotto 500 righe; usa `resources/` per documentazione più lunga
 - Tono imperativo, spiega il *perché* oltre al *cosa*
-- Nome directory in kebab-case, corrisponde al campo `name` in frontmatter
+- `functions/` contiene script per task ripetitivi/deterministici
+- `assets/` contiene file usati nell'output (template, icone, font)
 
-## Scrivere Agenti
+## Naming
 
-- Gli agenti sono file `.md` in `agents/` con frontmatter YAML
-- Frontmatter richiede: `name`, `description`, `skills` (lista di skill name)
-- Il corpo contiene le istruzioni specifiche dell'agente
+- Nome directory skill: kebab-case
+- Campo `name` in frontmatter: corrisponde al nome directory
+- Nome area: una parola in italiano (es. `prodotto`, `foundation`)
 
 ## Validazione
 
 Prima del commit:
 - `name` e `description` presenti in ogni SKILL.md
-- `name` corrisponde al nome della directory
-- Ogni SKILL.md elencato in `skills/` è referenziato da almeno un agente
+- Ogni SKILL.md ha `resources/`, `assets/`, `functions/` (anche vuote)

@@ -51,7 +51,7 @@ function applyDiscount(items, code) {
 
 ### Replace Conditionals with Objects/Map
 
-Long if-else chains or switch statements with similar structure → lookup table:
+Long if-else chains or switch statements with similar structure become a lookup table:
 
 ```ts
 const DISCOUNT_RULES = {
@@ -90,13 +90,17 @@ const saved = await saveOrder(order)       // command
 
 ## The Strangler Pattern
 
-For large, tightly-coupled code that can't be safely extracted, introduce a new structure alongside the old one, route new code to the new structure, and incrementally migrate old callers. Never rewrite from scratch — you lose all the embedded knowledge of edge cases.
+For large, tightly-coupled code that cannot be safely extracted, introduce a new structure alongside the old one, route new code to the new structure, and incrementally migrate old callers. Never rewrite from scratch — you lose all the embedded knowledge of edge cases.
 
 ## What Nobody Mentions
 
-The best refactoring is the one that makes the next change trivial. If you're refactoring but the next feature still feels hard, you refactored the wrong thing. Good refactoring makes the *next* change smaller — measure that, not the diff size.
+The best refactoring is the one that makes the next change trivial. If you are refactoring but the next feature still feels hard, you refactored the wrong thing. Good refactoring makes the *next* change smaller — measure that, not the diff size.
 
-## References
+## Functions
 
-See `references/dead-code.md` for identifying and safely removing dead code patterns.
-See `references/migration-strategies.md` for structured approaches to replacing legacy systems.
+Scripts in `functions/` automate repetitive refactoring tasks (dead code detection, import sorting, consistent naming). Use them when the corresponding task arises.
+
+## Resources
+
+See `resources/dead-code.md` for identifying and safely removing dead code.
+See `resources/migration-strategies.md` for structured approaches to replacing legacy systems.

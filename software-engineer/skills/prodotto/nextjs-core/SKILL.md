@@ -44,7 +44,7 @@ async function getCachedData() {
 | `page.tsx` | Content composition only — no boilerplate, logic, or styling |
 | Route groups `(name)/` | Logical grouping without URL side effects |
 
-pages should be thin — composition of sections, not implementation.
+Pages should be thin — composition of sections, not implementation.
 
 ## Async APIs (Next.js 16)
 
@@ -55,7 +55,6 @@ type Props = { params: Promise<{ slug: string }> }
 
 export default async function Page({ params }: Props) {
   const { slug } = await params
-  // ...
 }
 ```
 
@@ -93,14 +92,13 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://example.com"),
   title: { default: "Site", template: "%s | Site" },
-  description: "…",
+  description: "...",
   openGraph: { images: "/og.png" },
 }
 ```
 
 Prefer file conventions (`opengraph-image.*`, `icon.*`, `sitemap.ts`, `robots.ts`) over metadata object overrides — they auto-emit tags and are statically optimized.
 
-## References
+## Functions
 
-See `references/caching.md` for advanced `"use cache"` patterns, cache tags, and revalidation strategies.
-See `references/deployment.md` for build configuration, output settings, and platform-specific tuning.
+Scripts in `functions/` provide deterministic helpers for repetitive Next.js tasks. Use them when the corresponding task arises.

@@ -24,12 +24,12 @@ Test behavior, not implementation. A good test tells you what went wrong, not ju
 | Test | Implementation detail? | Should you test it? |
 |------|----------------------|---------------------|
 | "Clicking submit calls the API with correct data" | No — behavior | Yes |
-| "Component renders with `data-testid="form"`" | Yes — structure | No |
+| "Component renders with data-testid='form'" | Yes — structure | No |
 | "formatDate returns 'Jan 5, 2024' for 2024-01-05" | No — pure output | Yes |
 | "useState was called with initial value X" | Yes — implementation | No |
 | "User sees error toast when API returns 500" | No — behavior | Yes |
 
-**Rule of thumb**: if the test breaks when you refactor (without changing behavior), it's testing implementation. Fix the test, not the code.
+**Rule of thumb**: if the test breaks when you refactor (without changing behavior), it is testing implementation. Fix the test, not the code.
 
 ## Testing Async & Data
 
@@ -52,9 +52,9 @@ Flaky tests lose trust faster than missing coverage. If a test fails intermitten
 1. Check for timing assumptions (fixed waits instead of `waitFor`)
 2. Check for shared mutable state between tests (not cleaning DB, not resetting mocks)
 3. Check for order-dependent tests (relying on previous test's side effects)
-4. If it flakes more than once in CI, quarantine it — don't ignore, don't retry
+4. If it flakes more than once in CI, quarantine it — do not ignore, do not retry
 
-## References
+## Resources
 
-See `references/react-testing.md` for React-specific testing patterns (mocking hooks, portals, context providers).
-See `references/e2e-playwright.md` for Playwright setup and best practices.
+See `resources/react-testing.md` for React-specific testing patterns.
+See `resources/e2e-playwright.md` for Playwright setup and best practices.

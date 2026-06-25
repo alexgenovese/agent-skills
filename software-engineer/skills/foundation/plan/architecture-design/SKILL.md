@@ -13,7 +13,7 @@ Three questions to answer first:
 
 1. **What problem are we solving?** Not the feature, the underlying need (latency, team throughput, compliance)
 2. **What are the constraints?** Budget, timeline, team size, existing infra, compliance (SOC 2, GDPR, HIPAA)
-3. **What's the decision horizon?** Architecture for 6 months looks different from architecture for 5 years
+3. **What is the decision horizon?** Architecture for 6 months looks different from architecture for 5 years
 
 ## Decision Framework
 
@@ -22,7 +22,7 @@ For each architectural decision, document:
 - **Context**: why this decision matters now
 - **Options considered**: at least 2 real alternatives, not straw men
 - **Decision**: what we chose
-- **Consequences**: what we gain and what we give up (no free lunches)
+- **Consequences**: what we gain and what we give up
 - **Status**: proposed, accepted, deprecated, superseded
 
 Format as ADRs (Architecture Decision Records) stored alongside the code. One file per decision, `docs/adr/NNN-title.md`.
@@ -34,7 +34,7 @@ Format as ADRs (Architecture Decision Records) stored alongside the code. One fi
 - High cohesion inside, loose coupling across
 - Shared schemas in a library, not copy-pasted
 - A module should be replaceable without rewriting its consumers (interface before implementation)
-- If two modules share a database table, they're one module
+- If two modules share a database table, they are one module
 
 ### Data Flow
 
@@ -60,9 +60,8 @@ Format as ADRs (Architecture Decision Records) stored alongside the code. One fi
 
 ## What Nobody Mentions
 
-Architecture is not about getting it right the first time — it's about making change cheap. A good architecture is one where you can change your mind without rewriting everything. If your design can't tolerate a wrong prediction, it's over-engineered.
+Architecture is not about getting it right the first time — it is about making change cheap. A good architecture is one where you can change your mind without rewriting everything. If your design cannot tolerate a wrong prediction, it is over-engineered.
 
-## References
+## Resources
 
-See `references/adr-example.md` for an ADR template.
-See `references/decision-log.md` for patterns on maintaining a living decision log.
+See `resources/adr-template.md` for an ADR template.
