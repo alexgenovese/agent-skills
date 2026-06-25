@@ -76,6 +76,6 @@ Postgres, via Supabase (managed, per-project DBs, real-time subscriptions, row-l
 - Schema migrations require discipline (we use Sqitch)
 ```
 
-## Resources
+## References
 
-See `resources/adr-examples.md` for more ADR patterns and anti-patterns.
+See `references/adr-examples.md` for more ADR patterns and anti-patterns.

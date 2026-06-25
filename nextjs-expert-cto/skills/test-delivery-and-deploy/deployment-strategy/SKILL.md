@@ -53,7 +53,7 @@ The riskiest part of any deploy. Rules:
 - Never do a migration that locks a production table for more than a few seconds
 - Use a tool (Sqitch, Prisma Migrate, Flyway) — raw SQL scripts in a README do not count
 
-## Resources
+## References
+See `references/deployment-playbook.md` for runbooks for common deploy scenarios.
 
-See `resources/deployment-playbook.md` for runbooks for common deploy scenarios.
-See `resources/rollback-checklist.md` for the pre-deploy rollback verification checklist.
+See `references/rollback-checklist.md` for the pre-deploy rollback verification checklist.

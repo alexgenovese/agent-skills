@@ -1,28 +1,27 @@
 # OpenCode Agent Config
 
-Questo repository contiene un agente software engineer con skill organizzate per ambiti di competenza.
+Questo repository contiene agenti con skill organizzate per ambiti di competenza, seguendo lo standard [Agent Skills](https://agentskills.io) compatibile con Claude Code, Cursor, GitHub Copilot, Codex CLI, Amp, Goose e altri.
 
 ## Struttura
 
 ```
-software-engineer/           ← agente (directory principale)
-  SKILL.md                   ← metadati agente + system prompt
+agent/                     ← agente (directory principale)
+  SKILL.md                 ← metadati agente + system prompt
   skills/
-    <area>/<skill-name>/     ← skill organizzate per area
-      SKILL.md               ← metadati skill + istruzioni
-      resources/             ← documentazione caricabile su richiesta
-      assets/                ← template, icone, font
-      functions/             ← script eseguibili (deterministici)
+    <area>/<skill-name>/   ← skill organizzate per area
+      SKILL.md             ← metadati skill + istruzioni
+      scripts/             ← script eseguibili (.py, .js, .sh)
+      references/          ← documentazione caricabile su richiesta (.md, .txt, .pdf)
 ```
 
 ## Scrivere Skill
 
 - Ogni skill vive sotto `skills/<area>/<nome>/SKILL.md`
 - Frontmatter richiede: `name`, `description`
-- SKILL.md sotto 500 righe; usa `resources/` per documentazione più lunga
+- SKILL.md sotto 500 righe; usa `references/` per documentazione più lunga
 - Tono imperativo, spiega il *perché* oltre al *cosa*
-- `functions/` contiene script per task ripetitivi/deterministici
-- `assets/` contiene file usati nell'output (template, icone, font)
+- `scripts/` contiene script per task ripetitivi/deterministici
+- `references/` contiene documentazione di supporto
 
 ## Naming
 
@@ -34,4 +33,4 @@ software-engineer/           ← agente (directory principale)
 
 Prima del commit:
 - `name` e `description` presenti in ogni SKILL.md
-- Ogni SKILL.md ha `resources/`, `assets/`, `functions/` (anche vuote)
+- Ogni SKILL.md ha `scripts/` e `references/` (anche vuote)

@@ -75,7 +75,7 @@ GET /api/v1/posts?cursor=eyJpZCI6IjEyMyJ9&limit=20
 - **Header versioning** (`Accept: application/vnd.myapp.v2+json`) — cleaner URLs, harder to debug
 - **Never** remove a field without a deprecation period. Add `deprecated` to the schema, log usage, remove after N months
 
-## Resources
+## References
+See `references/error-codes.md` for a catalog of standard error codes and their meanings.
 
-See `resources/error-codes.md` for a catalog of standard error codes and their meanings.
-See `resources/rest-vs-graphql.md` for a detailed comparison and decision tree.
+See `references/rest-vs-graphql.md` for a detailed comparison and decision tree.

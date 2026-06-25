@@ -77,6 +77,6 @@ Every state is fully represented in the type system — impossible states are un
 
 TypeScript is a productivity tool, not a purity test. A `@ts-expect-error` with a documented reason is better than a 50-line type gymnastic that nobody understands. The goal is shipping with confidence, not 100% type coverage.
 
-## Resources
+## References
 
-See `resources/tsconfig-templates.md` for recommended tsconfig setups by project type.
+See `references/tsconfig-templates.md` for recommended tsconfig setups by project type.

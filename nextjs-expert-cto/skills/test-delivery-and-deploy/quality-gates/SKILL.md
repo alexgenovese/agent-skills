@@ -52,10 +52,10 @@ The hotfix bypass is temporary — the regression test closes the gate for the s
 
 Quality gates are a trust mechanism. If a gate fails but you merge anyway, the gate loses credibility. If a gate never fails, it is noise. Review your gate effectiveness quarterly — remove gates that do not catch real issues, and tighten gates that are too permissive.
 
-## Functions
+## Scripts
 
-Scripts in `functions/` analyze type coverage, track coverage trends, and generate gate reports. Use them when setting up or auditing quality gates.
+Scripts in `scripts/` analyze type coverage, track coverage trends, and generate gate reports. Use them when setting up or auditing quality gates.
 
-## Resources
+## References
 
-See `resources/gate-config.md` for recommended ESLint, TypeScript, and Vitest configurations.
+See `references/gate-config.md` for recommended ESLint, TypeScript, and Vitest configurations.

@@ -48,6 +48,6 @@ Velocity improvements that compound:
 
 Velocity is a symptom, not a goal. If you optimize for velocity directly (story points, sprint commitments), you get inflated estimates and quality cuts. Optimize for cycle time and deployment friction instead — velocity follows naturally.
 
-## Resources
+## References
 
-See `resources/bottleneck-analysis.md` for scripts to analyze your PR and issue tracker data.
+See `references/bottleneck-analysis.md` for scripts to analyze your PR and issue tracker data.

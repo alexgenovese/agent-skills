@@ -3,11 +3,11 @@ name: Validate
 on:
   pull_request:
     paths:
-      - 'software-engineer/**/*.md'
+      - 'nextjs-expert-cto/**/*.md'
   push:
     branches: [main]
     paths:
-      - 'software-engineer/**/*.md'
+      - 'nextjs-expert-cto/**/*.md'
 
 jobs:
   validate:
@@ -37,18 +37,20 @@ jobs:
             if [ "$name" != "$dir" ]; then
               echo "    WARNING: name '$name' != directory '$dir'"
             fi
-          done < <(find software-engineer -name SKILL.md)
+          done < <(find . -name SKILL.md -not -path './.github/*')
           [ "$errors" -eq 0 ] && echo "All skills valid." || exit 1
 
       - name: Validate agent SKILL.md
         run: |
-          echo "Validating agent SKILL.md..."
-          file="software-engineer/SKILL.md"
-          if [ ! -f "$file" ]; then
-            echo "ERROR: agent SKILL.md not found"
-            exit 1
-          fi
-          grep -Eq '^name: ' "$file" || { echo "ERROR: missing 'name'"; exit 1; }
-          grep -Eq '^description: ' "$file" || { echo "ERROR: missing 'description'"; exit 1; }
-          grep -Eq '^skills:' "$file" || { echo "ERROR: missing 'skills' list"; exit 1; }
-          echo "Agent valid."
+          for dir in nextjs-expert-cto; do
+            echo "Validating agent $dir/SKILL.md..."
+            file="$dir/SKILL.md"
+            if [ ! -f "$file" ]; then
+              echo "ERROR: $file not found"
+              exit 1
+            fi
+            grep -Eq '^name: ' "$file" || { echo "ERROR: missing 'name' in $file"; exit 1; }
+            grep -Eq '^description: ' "$file" || { echo "ERROR: missing 'description' in $file"; exit 1; }
+            grep -Eq '^skills:' "$file" || { echo "ERROR: missing 'skills' list in $file"; exit 1; }
+            echo "  $dir valid."
+          done
