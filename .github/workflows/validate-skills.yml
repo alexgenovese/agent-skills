@@ -1,0 +1,40 @@
+name: Validate Skills
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**/*.md'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**/*.md'
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check SKILL.md frontmatter
+        run: |
+          echo "Validating SKILL.md files..."
+          for file in skills/*/SKILL.md; do
+            dir=$(basename "$(dirname "$file")")
+            echo "Checking $file..."
+
+            if ! grep -q '^name: ' "$file"; then
+              echo "ERROR: $file is missing 'name' in frontmatter"
+              exit 1
+            fi
+
+            if ! grep -q '^description: ' "$file"; then
+              echo "ERROR: $file is missing 'description' in frontmatter"
+              exit 1
+            fi
+
+            name=$(grep '^name: ' "$file" | sed 's/^name: //')
+            if [ "$name" != "$dir" ]; then
+              echo "WARNING: name '$name' does not match directory '$dir'"
+            fi
+          done
+          echo "All skills valid."
