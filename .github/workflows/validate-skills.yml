@@ -4,12 +4,10 @@ on:
   pull_request:
     paths:
       - 'skills/**/*.md'
-      - 'nextjs-expert-cto/*.md'
   push:
     branches: [main]
     paths:
       - 'skills/**/*.md'
-      - 'nextjs-expert-cto/*.md'
 
 jobs:
   validate:
@@ -44,7 +42,7 @@ jobs:
 
       - name: Validate agent SKILL.md
         run: |
-          for dir in nextjs-expert-cto; do
+          for dir in skills/nextjs-expert-cto; do
             echo "Validating agent $dir/SKILL.md..."
             file="$dir/SKILL.md"
             if [ ! -f "$file" ]; then

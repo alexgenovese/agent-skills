@@ -202,6 +202,24 @@ The fast edit/verify loop during `next dev` — combines `/_next/mcp` (framework
 
 ---
 
+### `skill-creator`
+
+Create new skills, modify and improve existing skills, and measure skill performance. Runs evaluations and benchmarks to iteratively optimize triggering accuracy and output quality.
+
+**Use it when:**
+- Creating a new skill from scratch
+- Editing, testing, or optimizing an existing skill
+- Running automated evals and benchmarks on skill behavior
+
+**Example prompts:**
+```
+"Using skill-creator: help me write a new skill for SEO analysis."
+"Run the eval suite on our next-dev-loop skill."
+"Optimize the trigger description of our typescript-ecosystem skill."
+```
+
+---
+
 ## How skills work together
 
 A typical feature from zero to production:
@@ -232,7 +250,8 @@ skills/
 ├── api-design/                 # REST, GraphQL, error shapes, versioning
 ├── cache-components-adoption/  # Enable cacheComponents, fix blockers
 ├── cache-components-optimizer/ # Grow static shell, optimize nav
-└── next-dev-loop/              # /_next/mcp + agent-browser dev loop
+├── next-dev-loop/              # /_next/mcp + agent-browser dev loop
+└── skill-creator/              # Skill creation, testing, and optimization loop
 ```
 
 Each skill folder contains:
